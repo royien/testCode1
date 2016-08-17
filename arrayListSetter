@@ -6,7 +6,7 @@ public class anArrayOfList
     Scanner userIn= new Scanner(System.in);
 
     boolean shouldPrint=false;
-    protected int classGetArrayListNumber()
+    private int classGetArrayListNumber()
     {
         System.out.println("How much would you like to add in the ArrayList? (MAX: 20)");
         int returnNumber=0;
@@ -25,7 +25,7 @@ public class anArrayOfList
         return returnNumber;
     }
 
-    ArrayList<Integer> setArray()
+    private void setArray()
     {
         int counter= classGetArrayListNumber();
         for(int x=0; x<counter; x++)
@@ -33,25 +33,23 @@ public class anArrayOfList
             System.out.println("element of ["+x+"] = ");
             int numberUserInput = userIn.nextInt();
             intArray.add(numberUserInput);
-            
+
         }
         if(shouldPrint!=false)
         {
-           printArray();
+            System.out.println("The numbers within the arrays are: " + intArray);
         }
-        return intArray;
     }
 
-    void printArray()
+    void start()
     {
-         System.out.println("The numbers within the arrays are: " + intArray);
+        setArray();
     }
-    
+
     public static void main(String[] args)
     {
         anArrayOfList caller = new anArrayOfList();
-
-        caller.setArray();
+        caller.start();
 
     }
 }
